@@ -121,7 +121,7 @@ def _rail(*, label: str | None = None) -> str:
     if label:
         prefix = f"{TOP_RAIL_LEFT} {label} "
         return prefix + RAIL_CHAR * max(0, BOX_WIDTH - len(prefix))
-    return BOTTOM_RAIL_LEFT + RAIL_CHAR * (BOX_WIDTH - 1)
+    return BOTTOM_RAIL_LEFT + RAIL_CHAR * (BOX_WIDTH - 2)
 
 
 def _format_code_block(code: str, lang: str | None) -> str:
