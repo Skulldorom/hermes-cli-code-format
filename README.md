@@ -1,4 +1,4 @@
-# hermes-cli-code-format
+# cli-code-format
 
 A Hermes Agent plugin that transforms markdown fenced code blocks into
 box-drawing format when running in CLI mode — cleaner, more readable code
