@@ -1,6 +1,6 @@
 name: cli-code-format
-version: "1.0.0"
-description: "Transform markdown fenced code blocks (```) into Hermes box-drawing format (╭─/╰─) in CLI mode. Gateways get standard markdown untouched."
+version: "1.1.0"
+description: "Transform markdown fenced code blocks (```) into Hermes box-drawing format (╭─/╰─) in CLI mode. Works fully in non-streaming (Panel) mode; streaming mode shows stripped text (see docstring). Gateways get standard markdown untouched."
 author: "User"
 hooks:
   - transform_llm_output

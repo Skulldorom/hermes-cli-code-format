@@ -18,6 +18,15 @@ Wires one behaviour:
 
   The first registered ``transform_llm_output`` plugin to return a string
   wins — this plugin returns None when not on CLI to yield to other plugins.
+
+**Streaming mode note:** The ``transform_llm_output`` hook fires after the
+agent turn completes.  When the CLI streams the response token-by-token
+(with ``streaming_enabled``), the raw LLM text (stripped of markdown fences
+by the CLI's ``final_response_markdown=strip`` mode) is displayed during
+streaming, and the transformed box-drawing output is only rendered when the
+response is delivered via the non-streaming Rich Panel path.  For models
+that do not stream their final answer (or when streaming is disabled), the
+full box-drawing borders render as expected.
 """
 
 from __future__ import annotations
