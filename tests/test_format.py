@@ -238,6 +238,9 @@ def main():
         test_all_known_labels_have_good_names,
     ]
 
+    from test_streaming import TESTS as _streaming_tests
+    tests.extend(_streaming_tests)
+
     results = []
     for t in tests:
         name = t.__name__.replace("test_", "").replace("_", " ")
