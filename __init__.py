@@ -112,7 +112,7 @@ LANG_LABELS: dict[str, str] = {
 DEFAULT_LABEL = "code"
 
 
-def _rail(text: str, label: str | None = None) -> str:
+def _rail(*, label: str | None = None) -> str:
     """Build a box-drawing rail line.
 
     Top rail: ``╭─ label ──...``  (no right corner)
@@ -137,12 +137,12 @@ def _format_code_block(code: str, lang: str | None) -> str:
     if lines and lines[-1].strip() == "":
         lines = lines[:-1]
     indented = "\n".join("  " + l for l in lines)
-    return f"{_rail('', label=label)}\n\n{indented}\n\n{_rail('')}"
+    return f"{_rail(label=label)}\n\n{indented}\n\n{_rail()}"
 
 
 # Regex: ```lang? \n content \n ```
 _FENCE_RE = re.compile(
-    r"^```([^\n]*)\n(.*?)\n```",
+    r"^```([^\n]*)\n(.*?)\n```$",
     re.MULTILINE | re.DOTALL,
 )
 
